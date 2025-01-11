@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hp.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="change"> HARRY POTTER A MOLE</h1>
+    <h2 class="change" id="score">SCORE:</h2>
+    <div class="box" id="box">
+
+    </div>
+    <script >
+        let title = document.getElementById("box");
+let harry;
+let voldy;
+let score = 0;
+let gameover = false;
+let harryinterval;
+let voldyinterval;
+
+window.onload = () => {
+    console.log("hello");
+    creategame();
+}
+
+function creategame() {
+    for (let i = 0; i < 9; i++) {
+        let boxing = document.createElement("div");
+        boxing.id = i.toString();
+        boxing.className = "boxe";
+        title.appendChild(boxing);
+    }
+    
+    let count = 0;
+    let harryspeed = 4000;
+    let voldyspeed = 5000;
+
+    const createIntervals = () => {
+        clearInterval(harryinterval);
+        clearInterval(voldyinterval);
+
+        harryinterval = setInterval(() => {
+            createharrypotter();
+            count++;
+            adjustSpeeds();
+        }, harryspeed);
+
+        voldyinterval = setInterval(() => {
+            createvoldy();
+            count++;
+            adjustSpeeds();
+        }, voldyspeed);
+    }
+
+    const adjustSpeeds = () => {
+        if (count <= 3) {
+            harryspeed = 3000;
+            voldyspeed = 4000;
+        } else if (count <= 6) {
+            harryspeed = 1000;
+            voldyspeed = 3000;
+        } else if (count <= 10) {
+            harryspeed = 1500;
+            voldyspeed = 2000;
+        } else {
+            harryspeed = 1000;
+            voldyspeed = 1500;
+        }
+    }
+
+    createIntervals();
+}
+title.addEventListener("click", function setfunctionofgame(e) {
+    let clickbox = e.target;
+
+    // Check if the clicked element is not Harry or Voldy
+    if (clickbox.parentNode !== harry && clickbox.parentNode !== voldy) {
+        gameover = true;
+        document.getElementById("score").innerHTML = "GAME OVER: " + score.toString();
+        clearInterval(harryinterval);
+        clearInterval(voldyinterval);
+    } else if (clickbox.parentNode === harry) {
+        score += 10;
+        document.getElementById("score").innerHTML = "SCORE: " + score.toString();
+        disabledbox();
+    } else if (clickbox.parentNode === voldy) {
+        gameover = true;
+        document.getElementById("score").innerHTML = "GAME OVER: " + score.toString();
+        clearInterval(harryinterval);
+        clearInterval(voldyinterval);
+    }
+}, false);
+
+
+title.addEventListener("click", function setfunctionofgame(e) {
+    let clickbox = e.target;
+    if (gameover) {
+        return;
+    }
+    if (clickbox.parentNode === harry) {
+        score += 10;
+        document.getElementById("score").innerHTML = "SCORE: " + score.toString();
+        disabledbox();
+    } else if (clickbox.parentNode === voldy) {
+        document.getElementById("score").innerHTML = "GAME OVER: " + score.toString();
+        gameover = true;
+        clearInterval(harryinterval);
+        clearInterval(voldyinterval);
+    }
+}, false);
+
+function getRandom() {
+    return Math.floor(Math.random() * 9).toString();
+}
+
+function createharrypotter() {
+    if (gameover) {
+        return;
+    }
+    let harrypotter = document.createElement("img");
+    harrypotter.src = "./harrypotter.png";
+    let num = getRandom();
+    if (harry) {
+        harry.innerHTML = "";
+    }
+    if (voldy && voldy.id === num) {
+        return;
+    }
+    harry = document.getElementById(num);
+    harry.appendChild(harrypotter);
+}
+
+function createvoldy() {
+    if (gameover) {
+        return;
+    }
+    let voldemort = document.createElement("img");
+    voldemort.src = "./voldemort.png";
+    voldemort.style.width = "90px";
+    voldemort.style.height = "70px";
+    let num = getRandom();
+    if (voldy) {
+        voldy.innerHTML = "";
+    }
+    if (harry && harry.id === num) {
+        return;
+    }
+    voldy = document.getElementById(num);
+    voldy.appendChild(voldemort);
+}
+
+const disabledbox = () => {
+    for (let box of title.children) {
+        box.disabled = true;
+    }
+};
+
+    </script>
+</body>
+</html>

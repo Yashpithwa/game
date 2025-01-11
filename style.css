@@ -1,0 +1,302 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body
+{
+    background: linear-gradient(90deg, #1d1b6d, #421f81, #9a4f96, #1b3a57, #52a2d1, #e8b80d);
+
+
+
+    background-size:cover;
+   
+    
+}
+html, body, .main {
+    height: 100%; /* Height define karna zaroori hai */
+}
+
+.main
+
+{
+    display: flex;
+   
+    flex-direction: column;
+    
+    
+    height: 100%;
+    width: 100%;
+
+    
+}
+.mute
+{
+    margin-right: 1%;
+    gap: 1%;
+}
+.on
+{
+    padding-left: 5px;
+}
+
+.navbar
+{
+    height: 7%;
+    width: 100%;
+    background-color: #0D0D0D;
+    display: flex;
+    flex-direction: row;
+     justify-content: space-between;
+    align-items: center;
+    
+    font-size: xx-large;
+    background: linear-gradient(135deg, #2c3e50, #4e5b6e, #1d3c6e, #192f50);
+    color: white;
+    border-bottom: 2px solid #ffcc00;
+    border: none;
+}
+.logo
+{
+    height: 100%;
+    width: 20%;
+}
+.gamelogo
+{
+    height: 50px;
+    width: 70px;
+    background-image: url(website\ logo\ \(2\).webp);
+    border: 1px solid;
+    border: none;
+   background-size: contain;
+   background-repeat: no-repeat;
+   
+
+}
+@media (max-width: 400px) {
+    .navbar{
+    font-size: x-large;
+    }
+}
+
+.heading
+{
+    width: 60%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+   
+    justify-content: center;
+
+}
+.extfunc
+{
+    height: 100%;
+    width: 20%;
+   display: flex;
+  
+   align-items: center;
+   justify-content: space-between;
+   flex-direction: row-reverse;
+   margin-right: 2%;
+
+}
+.mainbody
+{
+height: 86%;
+width: 100%;
+display: flex;
+
+flex-wrap: wrap;
+border: none ;
+
+
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin-top: 1%;
+
+}
+.footer
+{
+    height: 7%;
+    width: 100%;
+    display: flex;
+}
+.box
+{
+    height: 150px;
+    width: 150px;
+    border: 1px solid black;
+    flex-wrap: wrap;
+    background-color: #52a2d1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    border-radius: 20%;
+    box-shadow: 
+    0px 8px 15px rgba(154, 79, 150, 0.6), /* Pink Glow */
+    0px 12px 25px rgba(82, 162, 209, 0.7); /* Blueish Glow */
+   border: none;
+
+
+
+
+
+    
+}
+
+@media (min-width:650px)
+{
+    .box
+    {
+        height: 190px;
+        width: 190px;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 1.5%;
+    }
+    .set
+{
+    padding-right:30px;
+}
+    .mainbody
+    {
+        justify-content: space-around;
+       
+        margin-top: 2%;
+        flex-direction: column;
+    }
+    .box:hover
+{
+    box-shadow: 0px 0px 1px 1px black;
+    height: 191px;
+    width: 191px;
+}
+}
+
+@media (max-width:651px)
+{
+     .box
+     {
+        height: 230px;
+        width: 230px;
+     }
+     .box:hover
+{
+    height: 232px;
+    box-shadow: 0px 0px 1px 1px black;
+    width: 232px;
+}
+.mute
+{
+    display: flex;
+    gap: 0.5%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+     .mainbody
+     {
+       
+        gap: 10%;
+        margin-top: 3.5%;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+     }
+     body 
+     {
+        border: none;
+     }
+}
+@media (min-width:651px) {
+    
+
+.box1
+{
+   background-image: url(RPS\ LAPTOP.jpg);
+    background-repeat: no-repeat;
+   
+}
+
+.box2
+{
+    background-image: url(7up\ and\ 7\ down\ \ laptop.jpg);
+}
+.box3
+{
+    background-image: url(roultle\ laptop.jpg);
+}
+.box4
+{
+    background-image: url(x\ and\ o\ laptop.jpg);
+    background-size: cover;
+}
+.box5
+{
+    background-image: url(car\ laptop.jpg);
+}
+.box6
+{
+    background-image: url(harry\ potter\ laptop.jpg);
+}
+.box7
+{
+    background-image: url(magic\ ball\ laptop.jpg);
+}
+.box8
+{
+    background-image: url(head\ and\ tail\ laptop\ .jpg);
+}
+.box9
+{
+    background-image: url(guess\ number\ laptop.jpg);
+}
+}
+@media (max-width:650px)
+{
+    .box1
+    {
+        background-image: url(rps\ mobile.jpg);
+    }
+    .box2
+    {
+        background-image: url(dice\ mobile.jpg);
+
+    }
+    .box3
+    {
+        background-image: url(roullte\ mobile.jpg);
+
+    }
+    .box4
+    {
+        background-image: url(x\ and\ o.jpg);
+    }
+    .box5
+    {
+        background-image: url(car\ mobile.jpg);
+    }
+    .box6
+    {
+        background-image: url(harry\ mobile.jpg);
+    }
+    .box7
+    {
+        background-image: url(magic\ ball\ mobile.jpg);
+    }
+    .box8
+    {
+        background-image: url(head\ and\ taik\ mobile.jpg);
+    }
+    .box9
+    {
+        background-image: url(guess\ number\ mobile.jpg)
+    }
+}
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAME GALAXY</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+       
+      
+
+
+
+        <div class="navbar">
+            <div class="logo">
+            <div class="gamelogo">
+  </div>
+            </div>
+            <div class="heading">
+               GAME GALAXY 
+            </div>
+            <div class="extfunc">
+                <div class="mute">
+                  <i class="fa-solid fa-volume-high set ON" id="ON"></i> 
+                    <i class="fa-solid fa-volume-xmark OFF" id="OFF"></i>
+                </div>
+            </div>
+        </div>
+        <div class="mainbody">
+            <a href="rps.html"><div class="box box1"></div></a>
+            <div class="box box2"></div>
+            <div class="box box3"></div>
+            <div class="box box4"></div>
+            <div class="box box5"></div>
+            <a href="harry.html"><div class="box box6"></div></a>
+            <div class="box box7"></div>
+            <div class="box box8"></div>
+           <a href="gn.html"> <div class="box box9"></div></a>
+           
+        </div>
+        <div class="footer"></div>
+    </div>
+  
+    <audio id="audio" src="Arcade Reverie.mp3" loop></audio>
+<script>
+ 
+  let ON=document.getElementById("ON");
+  let OFF=document.getElementById("OFF");
+  let play=document.querySelector('audio');
+  ON.addEventListener("click",(e)=>
+{
+    play.play();
+})
+ OFF.addEventListener("click",(e)=>
+{
+    play.pause();
+})
+
+  </script>
+</body>
+</html>

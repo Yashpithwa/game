@@ -1,0 +1,59 @@
+*
+{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    
+}
+body
+{
+    height: 100%;
+    width: 100%;
+    
+    
+   
+
+
+}
+html, body, .main {
+    height: 100%; /* Height define karna zaroori hai */
+}
+
+.main
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(harry-potter-with-a-magic-wand.jpg);
+    background-size: cover;
+    flex-direction: column;
+    z-index: 0; /* Place the blur behind the small box */
+}
+.info
+{
+    height: 500px;
+    width: 800px;
+    border-radius: 15px;
+    background: inherit;
+    border: 1px solid black;
+    border: none;
+    background-size: cover;
+    z-index: 1;
+    text-align: center;
+    padding-top: 70px;
+    background-image: url(grunge-certificate-with-vintage-ornamental-frame_1048-11681.avif);
+}
+#btn
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+    margin-left: 360px;
+    color: black;
+    height: 40px;
+    width: 80px;
+    border-radius: 30px;
+    background-color: antiquewhite;
+    text-align: center;
+}

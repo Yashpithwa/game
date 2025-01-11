@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="gn.css">
+    <title>GUESS NUMBET</title>
+</head>
+<body>
+    <div class="main">
+   <div class="navbar">
+      <h1>GUESS THE NUMBER!</h1>
+   </div>
+   <div class="mainbody">
+    <div class="mainbox">
+        <div class="head">Guess the number between 1-10</div>
+        <div class="game">
+            <div class="numtext">
+            <form action="">
+                <label for="">Enter the number :</label>
+                <input type="number" name="" id="usernumber"  min="1"   max="10" class="enternumber">
+            </form>
+            </div>
+            <div class="check">
+                <div class="comp" id="comp"></div>
+                <div class="printing" id="printing"></div>
+                <div class="life">
+                    <div id="1"        class="life1 lol"></div>
+                    <div id="2"        class="life2 lol"></div>
+                    <div id="3"        class="life3 lol"></div>
+                    <div id="4"        class="life4 lol"></div>
+                    <div id="5"        class="life5 lol"></div>
+                   
+                </div>
+                <div class="play">
+                    <button id="start">start</button>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+   </div>
+   <audio src="fail-234710.mp3" hidden id="fail"></audio>
+   <audio src="game-over-2-sound-effect-230463.mp3"  hidden id="gameover"></audio>
+
+   <script>
+    let count=5;
+    let btn=document.getElementById("start");
+    let life5=document.getElementById("5");
+    let life4=document.getElementById("4");
+    let life3=document.getElementById("3");
+    let life2=document.getElementById("2");
+    let life1=document.getElementById("1");
+    btn.addEventListener("click",(e)=>
+{
+    let randnum=Math.floor(Math.random()*10)+1;
+    let printing=document.getElementById("printing");
+    let print=document.getElementById("comp");
+    let uservalue=document.getElementById("usernumber").value;
+    let play=document.getElementById("fail");
+   // console.log(uservalue);
+   let GM=document.getElementById("gameover");
+    
+    print.textContent=randnum;
+
+    if(uservalue==randnum)
+  {
+    printing.textContent=`🎉 Perfect!`;
+  }
+   else
+   {
+    printing.textContent=`❌ Try Again!`;
+    count--;
+
+    if(count==4)
+   {
+    life5.style.background = "red";
+    play.play();
+   }
+    if(count==3)
+   {
+    life4.style.background = "red";
+    play.play();
+   }
+    if(count==2)
+   {
+    life3.style.background = "red";
+    play.play();
+
+   }
+   if(count==1)
+   {
+    life2.style.background = "red";
+    play.play();
+   }
+   if(count==0)
+   {
+    life1.style.background = "red";
+    play.play();
+   }
+
+   if(count<0)
+   {
+    btn.innerText=`Play Again!`;
+    printing.textContent=`GAME OVER`;
+    GM.play();
+   }
+   
+}
+   }
+   
+)
+   </script>
+</body>
+</html>

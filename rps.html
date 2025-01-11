@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCK PAPER SCISSORS</title>
+    <link rel="stylesheet" href="rps.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Additional Hover Effect Style */
+        .hovered {
+            background-color: #f1c40f; /* Yellow highlight for hover */
+        }
+    </style>
+</head>
+<body>
+   <div class="main">
+    <div class="navbar">
+        <div class="heading">
+            <h2>ROCK PAPER SCISSORS</h2>
+        </div>
+        <div class="mute">
+            <i class="fa-solid fa-volume-xmark " id="OFF"></i>
+        </div>
+    </div>
+    <div class="rps">
+        <div class="score">
+            <div id="user" class="user">USER:0</div>
+            <div id="comp" class="computer">COMPUTER:0</div>
+        </div>
+        <div class="game">
+            <div class="player">
+                <div id="box1" class="box box1"></div>
+                <div id="box2" class="box box2"></div>
+                <div id="box3" class="box box3"></div> 
+            </div>
+            <div class="text">
+                <div class="cd">
+                    <div id="countdown" class="countdown">
+                        <h1>COUNT DOWN:</h1>
+                    </div>
+                    <div class="num" id="num">3</div>
+                </div>
+                <div class="txt" id="txt"> COMPUTER IS THE WINNER </div>
+                <div class="btn"><button>PLAY</button></div>
+            </div>
+            <div class="bot"> 
+                <div class="box box4"></div>
+                <div class="box box5"></div>
+                <div class="box box6"></div>
+            </div>
+        </div>
+    </div>
+   </div>
+   <audio  id="cd" src="countdown-sound-effect-8-bit-151797.mp3" hidden ></audio>
+   <audio  id="win" src="tadaa-47995.mp3 " hidden></audio>
+   <audio  id="tap"  src="ding-80828.mp3"hidden></audio>
+   <audio  id="fail"   src="fail-144746.mp3"></audio>
+   <script>
+    let userpoint = 0;
+    let comppoint = 0;
+    let winmusic=document.getElementById("win");
+    let tap=document.getElementById("tap");
+    let fail=document.getElementById("fail");
+    let btn = document.querySelector('button');
+    btn.addEventListener("click", (e) => {
+        userpoint = 0;
+        comppoint = 0;
+    });
+
+    // Main point 
+    let rock = document.getElementById("box1");
+    let paper = document.getElementById("box2");
+    let scissor = document.getElementById("box3");
+    let winnertxt = document.getElementById("txt");
+    let user = document.getElementById("user");
+    let comp = document.getElementById("comp");
+
+    
+    // Function to handle hover effect on selected box
+    function addHoverEffect(boxId) {
+        const boxes = document.querySelectorAll('.box');
+        boxes.forEach(box => box.classList.remove('hovered')); // Remove hover effect from all
+        document.getElementById(boxId).classList.add('hovered'); // Add hover effect to selected box
+    }
+
+    rock.addEventListener("click", (e) => {
+
+        tap.play();
+
+        let computer = Math.floor(Math.random() * 3) + 1;
+        if (computer == 1) {
+            winnertxt.textContent = "It's a Tie!";
+            userpoint++;
+            comppoint++;
+            play.currentTime=0;
+            winmusic.play();
+        } else if (computer == 2) {
+            winnertxt.textContent = "It's  Paper Computer Wins the Game!";
+            comppoint++;
+            play.currentTime=0;
+            fail.play();
+        } else if (computer == 3) {
+            winnertxt.textContent = "It's  Scissor User Wins the Game!";
+            userpoint++;
+            play.currentTime=0;
+            winmusic.play();
+        }
+
+        // Add hover effect on selected box
+     
+
+        user.textContent = `USER: ${userpoint}`;
+        comp.textContent = `COMPUTER: ${comppoint}`;
+
+        e.preventDefault();
+    });
+
+    paper.addEventListener("click", (e) => {
+
+
+        tap.play();
+
+        let computer = Math.floor(Math.random() * 3) + 1;
+        if (computer == 2) {
+            winnertxt.textContent = "It's a Tie!";
+            userpoint++;
+            comppoint++;
+            play.currentTime=0;
+            winmusic.play();
+        } else if (computer == 3) {
+            winnertxt.textContent = "It's a Scissor Computer Wins the Game!";
+            comppoint++;
+            play.currentTime=0;
+            fail.play();
+        } else if (computer == 1) {
+            winnertxt.textContent = "It's a Rock User Wins the Game!";
+            userpoint++;
+            play.currentTime=0;
+            winmusic.play();
+        }
+
+        // Add hover effect on selected box
+     
+
+        user.textContent = `USER: ${userpoint}`;
+        comp.textContent = `COMPUTER: ${comppoint}`;
+
+        e.preventDefault();
+    });
+
+    scissor.addEventListener("click", (e) => {
+
+
+      tap.play();
+
+        let computer = Math.floor(Math.random() * 3) + 1;
+        if (computer == 3) {
+            winnertxt.textContent = "It's a Tie!";
+            userpoint++;
+            comppoint++;
+            play.currentTime=0;
+            winmusic.play();
+        } else if (computer == 1) {
+            winnertxt.textContent = "It's a Rock Computer Wins the Game!";
+            comppoint++;
+            play.currentTime=0;
+            fail.play();
+        } else if (computer == 2) {
+            winnertxt.textContent = "It's a paper User Wins the Game!";
+            userpoint++;
+            play.currentTime=0;
+            winmusic.play();
+        }
+
+        // Add hover effect on selected box
+        
+        user.textContent = `USER: ${userpoint}`;
+        comp.textContent = `COMPUTER: ${comppoint}`;
+
+        e.preventDefault();
+    });
+
+    // Music point and countdown point last ma 
+    let play = document.getElementById("cd");
+    let countdown = 3;
+    let countelement = document.getElementById("num");
+    let pause = document.getElementById("OFF");
+    
+    btn.addEventListener("click", (e) => {
+        countdown = 3;
+        countelement.textContent = countdown;
+        play.currentTime = 0;
+        play.play();
+        const countdownInterval = setInterval(() => {
+            countelement.textContent = countdown;
+            countdown--;
+
+            if (countdown < 0) {
+                clearInterval(countdownInterval);
+                countelement.textContent = "GO!";
+            }
+        }, 1000);
+
+    });
+    let mutebtn=document.getElementById("mute");
+    mutebtn.addEventListener("click",(e)=>
+{
+    winmusic.pause();
+    fail.pause();
+    tap.pause();
+    play.pause();
+})
+
+   </script>
+</body>
+</html>

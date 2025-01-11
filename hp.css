@@ -1,0 +1,66 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body
+{
+    background-image: url(harry-potter-with-a-magic-wand.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    color: orange;
+    
+}
+.change
+{
+    margin-right: 455px;
+}
+.box
+{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    width: 720px;
+    flex-wrap: wrap;
+    background-image: url(depositphotos_508283202-stock-illustration-dark-blue-vintage-background-royal.jpg);
+   background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 50px;
+    margin-right: 450px;
+    border: 3px solid ;
+    border-radius: 20px;
+    gap: 5px;
+}
+.box div
+{
+    
+    height: 165px;
+    width:  195px;
+    border: 1px solid green;
+    border: none;
+    background-image: url(wdvk8pcoj3q1tr84qa3f0ft4pa5s-removebg-preview\ \(3\).png);
+    margin-left: 20px;
+    background-repeat: no-repeat;
+    margin-top: 30px;
+    background-size: contain;
+
+    
+
+}
+
+.box  img
+{
+    height: 100px;
+    width: 100px;
+    margin-left: 30px;
+   
+    margin-bottom: 30px;
+}
